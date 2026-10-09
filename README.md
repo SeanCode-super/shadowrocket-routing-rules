@@ -2,14 +2,14 @@
 
 ## 内容与使用
 
-[`rules.conf`](rules.conf) 只含 `[Rule]` 段，共 4,901 条有效规则。它不是完整的小火箭配置，不能作为包含节点的订阅使用，也不建议直接替换正在工作的完整配置。
+[`rules.conf`](rules.conf) 只含 `[Rule]` 段，共 4,902 条有效规则。它不是完整的小火箭配置，不能作为包含节点的订阅使用，也不建议直接替换正在工作的完整配置。
 
 备份现有配置后，将本文件的 `[Rule]` 内容合并到现有配置中。`DIRECT` 表示直连；`PROXY` 表示代理策略，使用自定义策略组时请将其替换为自己的策略组名。文件不选择出口国家，也不提供节点。
 
 规则按顺序首次匹配：
 
 1. Google、Meta、ChatGPT / OpenAI、Claude、X / Twitter、Grok / xAI、海外 TikTok 等已收录域名优先走代理。
-2. 中国抖音、QQ / 微信及已收录的国内应用域名直连。
+2. 中国抖音、QQ / 微信、快手、Pap X 及已收录的国内应用域名直连。
 3. 局域网、回环和链路本地等保留地址直连。
 4. 其余中国大陆 IP 由 `GEOIP,CN,DIRECT` 直连；剩余目标由 `FINAL,PROXY` 走代理。
 
@@ -30,6 +30,6 @@
 - [v2fly/domain-list-community](https://github.com/v2fly/domain-list-community/tree/e84921279c9142434b43cb84ec6c17f987e025df)：固定版本 `e84921279c9142434b43cb84ec6c17f987e025df`，用于海外服务及抖音域名来源。原 MIT 版权和许可证保留于 [`LICENSES/v2fly-MIT.txt`](LICENSES/v2fly-MIT.txt)。
 - [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script/tree/036c097eb26c6a52c4f04ebcb6633043cb942669/rule/Shadowrocket)：固定版本 `036c097eb26c6a52c4f04ebcb6633043cb942669`，GPL-2.0。国内应用补充仅选取域名规则，排除了宽泛 IP / ASN、脚本及不适合当前分流目标的共享海外域名。
 
-2026-10-09 的修改包括：规则筛选与去重、域名格式转换、海外规则优先排序、抖音 / TikTok 区分、国内应用域名补充、仅导出规则段、将私人策略名替换为 `PROXY`。原始来源注释保留在规则文件内。
+2026-10-09 的修改包括：规则筛选与去重、域名格式转换、海外规则优先排序、抖音 / TikTok 区分、国内应用域名补充、Pap X 专用域名直连、仅导出规则段、将私人策略名替换为 `PROXY`。原始来源注释保留在规则文件内。
 
 本仓库的组合及修改版按 [GNU GPL v2](LICENSE) 发布，上游各自的版权声明继续保留。按现状提供，不附带任何担保。
