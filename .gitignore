@@ -1,0 +1,8 @@
+# Allowlist: do not accidentally publish full personal configurations.
+*
+!.gitignore
+!README.md
+!LICENSE
+!LICENSES/
+!LICENSES/v2fly-MIT.txt
+!rules.conf
